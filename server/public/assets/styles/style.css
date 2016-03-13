@@ -1,6 +1,11 @@
 .splash{
     text-align: center;
 }
+.instructions{
+    position: absolute;
+    top: 160px;
+    left: 20px;
+}
 
 .calc-container{
 

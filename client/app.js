@@ -3,6 +3,7 @@
     var operator = '';
     var valA = '';
     var valB = '';
+    var boolShift = false;
 
 $(document).ready(function(){
     //prevent form submission
@@ -27,13 +28,13 @@ function setListeners(){
     $(window).keydown(getKeys);
 
 
- }
 
+ }
 function getKeys(event){
 
      var myKey = parseInt(event.keyCode);
 
-      console.log("mykey=", myKey);
+      //console.log("mykey=", myKey);
 
      if (myKey >47 && myKey <58){
          addKeyToBuffer(myKey-48);
@@ -46,8 +47,28 @@ function getKeys(event){
          addDecimal();
      }
 
+     if (myKey == 187){
+         if (boolShift == false){
+            checkExpression();
+        } else {
+            setOperatorKey('+');
+        }
+    } else {
+        boolShift = false;
+    }
+     if (myKey == 191){
+         setOperatorKey('/');
+     }
+     if (myKey == 88){
+         setOperatorKey('x');
+     }
+     if (myKey == 189){
+         setOperatorKey('-');
+     }
 
-
+     if (myKey == 16){
+         boolShift = true;
+     }
  }
 
 function clearAll(){
@@ -109,7 +130,17 @@ function showResult(data){
     buffer = data.toString();
     displayBuffer();
 }
+function setOperatorKey(myKey){
 
+    operator = myKey;
+    // if we have a number in the buffer, set value 1 to the buffer
+    // this means we got a +-/x, and we need to be ready for the next number.
+    if (buffer.length > 0){
+        valA = buffer;
+        buffer = '';
+    }
+    displayBuffer();
+}
 function setOperator(){
     var myKey = $(this).data('key');
     operator = myKey;
