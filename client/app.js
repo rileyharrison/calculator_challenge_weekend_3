@@ -33,10 +33,19 @@ function getKeys(event){
 
      var myKey = parseInt(event.keyCode);
 
-      console.log("mykey=", myKey-48);
+      console.log("mykey=", myKey);
+
      if (myKey >47 && myKey <58){
          addKeyToBuffer(myKey-48);
      }
+
+     if (myKey == 67){
+         clearAll();
+     }
+     if (myKey == 190){
+         addDecimal();
+     }
+
 
 
  }
@@ -133,7 +142,7 @@ function addKeyToBuffer(value){
 }
 function addToBuffer(value){
     //concatenate the entered number to the buffer
-    var myKey = $(this).data('key');    
+    var myKey = $(this).data('key');
     buffer = buffer + myKey;
     displayBuffer();
 }

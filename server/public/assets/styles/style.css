@@ -19,19 +19,21 @@
     border-radius: 5%;
     margin: 5px;
 
-    font-size: 30px;
+    font-size: 40px;
 }
 .calc-lcd{
-    
+
     font-size: 40px;
     background-color: gray;
     border: 1px solid black;
     text: black;
     border-radius: 20px;
-    width: 560px; height: 70px;
+    width: 550px; height: 70px;
     text-align: right;
     margin-left: 20px;
     padding-right: 10px;
+    position:relative;
+    left: -12px;
 
 
 }
