@@ -1,8 +1,9 @@
 var express = require("express");
 var router = express.Router();
+// var mongoose = require("mongoose");
 var path = require("path");
 
-var employee = require("../modules/node_module.js");
+// var employee = require("../modules/node_module.js");
 
 // mongoose.connect("mongodb://localhost:27017/kappa_cats");
 
@@ -12,7 +13,7 @@ var employee = require("../modules/node_module.js");
 
 router.post("/add", function(req,res){
 
-    console.log("what is our request", req.body.valueA, req.body.valueB);
+    // console.log("what is our request", req.body.valueA, req.body.valueB);
 
     var result = 0;
     var valueA = req.body.valueA;

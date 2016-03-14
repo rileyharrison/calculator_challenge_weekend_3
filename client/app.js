@@ -30,6 +30,9 @@ function setListeners(){
 
 
  }
+
+ // I want to pretty up the getKeys function
+
 function getKeys(event){
 
      var myKey = parseInt(event.keyCode);
